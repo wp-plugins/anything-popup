@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anyth
 Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Tags: popup, contact
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 4.0
+Tested up to: 3.5
+Stable tag: 4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,14 +64,18 @@ Plugin configuration
 First version
 
 = 2.0 =
-JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook)
+JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook).
 
 = 3.0 =
 New demo link
 
 = 4.0 =
 Tested up to 3.4.2
-Slight change in the short code, Please find the new short code for your gallery
+Slight change in the short code, Please find the new short code for your gallery.
+
+= 4.1 =
+Tested up to 3.5
+Option to add multiple pop up on single page.
 
 == Upgrade Notice ==
 
@@ -79,11 +83,15 @@ Slight change in the short code, Please find the new short code for your gallery
 First version
 
 = 2.0 =
-JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook)
+JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook).
 
 = 3.0 =
 New demo link
 
 = 4.0 =
 Tested up to 3.4.2
-Slight change in the short code, Please find the new short code for your gallery
+Slight change in the short code, Please find the new short code for your gallery.
+
+= 4.1 =
+Tested up to 3.5
+Option to add multiple pop up on single page.

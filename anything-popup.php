@@ -4,7 +4,7 @@
 Plugin Name: Anything Popup
 Description: This is a simple plugin to display the entered content in to unblockable popup window. popup will open by clicking the text or image button.
 Author: Gopi.R
-Version: 4.0
+Version: 4.1
 Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Author URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Donate link: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
@@ -15,9 +15,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 global $wpdb, $wp_version;
 define("AnythingPopupTable", $wpdb->prefix . "AnythingPopup");
 
-function AnythingPopup($pop_id)
+function AnythingPopup( $pop_id = "1" )
 {
 	global $wpdb, $wp_version;
+	$ArrInput = array();
+	$ArrInput["id"] = $pop_id;
+	echo AnythingPopup_shortcode( $ArrInput );
+}
+
+function AnythingPopup_shortcode( $atts ) 
+{
+	global $wpdb;
+	$scode = "";
+	// [AnythingPopup id="1"]
+	if ( ! is_array( $atts ) )
+	{
+		return '';
+	}
+	$pop_id = $atts['id'];
 	
 	$sSql = "select * from ".AnythingPopupTable." where 1=1";
 	if($pop_id == "RANDOM" || $pop_id == "")
@@ -26,135 +41,20 @@ function AnythingPopup($pop_id)
 	}
 	else
 	{
-		$value = $pop_id;
-		if(is_numeric(@$value)) 
+		if(is_numeric($pop_id)) 
 		{
-			$sSql = $sSql . " and pop_id=$value";
+			$sSql = $sSql . " and pop_id=$pop_id";
 		}
 	}
-	
 	$sSql = $sSql . " LIMIT 0,1";
 	
-	$data = $wpdb->get_results($sSql);
-	if ( ! empty($data) ) 
-	{
-		$data = $data[0];
-		$pop_width = stripslashes($data->pop_width);
-		$pop_height = stripslashes($data->pop_height);
-		$pop_headercolor = stripslashes($data->pop_headercolor);
-		$pop_bordercolor = stripslashes($data->pop_bordercolor);
-		$pop_header_fontcolor = stripslashes($data->pop_header_fontcolor);
-		$pop_title = stripslashes($data->pop_title);
-		$pop_content = stripslashes($data->pop_content);
-		$pop_content = str_replace("\n", "<br />", $pop_content);
-		$pop_caption = stripslashes($data->pop_caption);
-	?>
-	<style type="text/css">
-	#AnythingPopup_BoxContainer	{
-		width:<?php echo $pop_width; ?>px;
-		height:<?php echo $pop_height; ?>px;
-		background:#FFFFFF;
-		border:1px solid <?php echo $pop_bordercolor; ?>;
-		padding:0;
-		position:absolute;
-		z-index:99999;
-		cursor:default;   
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		-khtml-border-radius: 10px;
-		border-radius: 10px;   
-		display:none;
-	}
-	
-	#AnythingPopup_BoxContainerHeader {
-		height:30px;
-		background:<?php echo $pop_bordercolor; ?>;
-		border-top-right-radius:10px;
-		-moz-border-radius-topright:10px;
-		-webkit-border-top-right-radius:10px;
-		-khtml-border-top-right-radius: 10px;
-		border-top-left-radius:10px;
-		-moz-border-radius-topleft:10px;
-		-webkit-border-top-left-radius:10px;
-		-khtml-border-top-left-radius: 10px;   
-	}
-	
-	#AnythingPopup_BoxContainerHeader a {
-	   color:<?php echo $pop_header_fontcolor; ?>;
-	   font-family:Verdana,Arial;
-	   font-size:10pt;
-	   font-weight:bold;
-	}
-	
-	#AnythingPopup_BoxTitle {
-	   float:left;
-	   padding-left: 3px;
-	   color:<?php echo $pop_header_fontcolor; ?>;
-	   font-family:Verdana,Arial;
-	   font-size:12pt;
-	   font-weight:bold;   
-	}
-	
-	#AnythingPopup_BoxClose {
-	   float:right;
-	   width:50px;
-	   margin:5px;
-	}
-	#AnythingPopup_BoxContainerBody {
-	   margin:15px;
-	}
-	#AnythingPopup_BoxContainerFooter {
-	   position: fixed; 
-	   top:0; 
-	   left:0; 
-	   bottom:0; 
-	   right:0;
-	   background:#000000;
-	   opacity: .3;
-	   -moz-opacity: .3;
-	   filter: alpha(opacity=30);
-	   border:1px solid <?php echo $pop_bordercolor; ?>;
-	   z-index:1;
-	   display:none;
-	}
-	</style>
-	<a href='javascript:AnythingPopup_OpenForm("AnythingPopup_BoxContainer","AnythingPopup_BoxContainerBody","AnythingPopup_BoxContainerFooter","<?php echo $pop_width; ?>","<?php echo $pop_height; ?>");'><?php echo $pop_caption; ?></a>
-	<div style="display: none;" id="AnythingPopup_BoxContainer">
-	  <div id="AnythingPopup_BoxContainerHeader">
-		<div id="AnythingPopup_BoxTitle"><?php echo $pop_title; ?></div>
-		<div id="AnythingPopup_BoxClose"><a href="javascript:AnythingPopup_HideForm('AnythingPopup_BoxContainer','AnythingPopup_BoxContainerFooter');">Close</a></div>
-	  </div>
-	  <div id="AnythingPopup_BoxContainerBody"><?php echo $pop_content; ?></div>
-	</div>
-	<div style="display: none;" id="AnythingPopup_BoxContainerFooter"></div>
-	<?php
-	}
-}
-
-add_shortcode( 'AnythingPopup', 'AnythingPopup_shortcode' );
-
-function AnythingPopup_shortcode( $atts ) 
-{
-	global $wpdb;
-	// [AnythingPopup id="1"]
-	if ( ! is_array( $atts ) )
-	{
-		return '';
-	}
-	$scode = $atts['id'];
-	
-	$sSql = "select * from ".AnythingPopupTable." where 1=1";
-	if(is_numeric(@$scode)) 
-	{
-		$sSql = $sSql . " and pop_id=$scode";
-	}
-	
-	$sSql = $sSql . " LIMIT 0,1";
 	$pop = "";
 	$data = $wpdb->get_results($sSql);
 	if ( ! empty($data) ) 
 	{
+
 		$data = $data[0];
+		$pop_content_id = $data->pop_id;
 		$pop_width = stripslashes($data->pop_width);
 		$pop_height = stripslashes($data->pop_height);
 		$pop_headercolor = stripslashes($data->pop_headercolor);
@@ -164,15 +64,16 @@ function AnythingPopup_shortcode( $atts )
 		$pop_content = stripslashes($data->pop_content);
 		$pop_content = str_replace("\n", "<br />", $pop_content);
 		$pop_caption = stripslashes($data->pop_caption);
-
+		$pop_content_height = $pop_height - 60;
+		
 		$pop = $pop . '<style type="text/css">';
-		$pop = $pop . '#AnythingPopup_BoxContainer	{';
+		$pop = $pop . '#AnythingPopup_BoxContainer'.$pop_content_id.'	{';
 			$pop = $pop . 'width:'.$pop_width.'px;';
 			$pop = $pop . 'height:'.$pop_height.'px;';
 			$pop = $pop . 'background:#FFFFFF;';
 			$pop = $pop . 'border:1px solid '.$pop_bordercolor.';';
 			$pop = $pop . 'padding:0;';
-			$pop = $pop . 'position:absolute;';
+			$pop = $pop . 'position:fixed;';
 			$pop = $pop . 'z-index:99999;';
 			$pop = $pop . 'cursor:default;';   
 			$pop = $pop . '-moz-border-radius: 10px;';
@@ -181,7 +82,7 @@ function AnythingPopup_shortcode( $atts )
 			$pop = $pop . 'border-radius: 10px;   ';
 			$pop = $pop . 'display:none;';
 		$pop = $pop . '} ';
-		$pop = $pop . '#AnythingPopup_BoxContainerHeader {';
+		$pop = $pop . '#AnythingPopup_BoxContainerHeader'.$pop_content_id.' {';
 			$pop = $pop . 'height:30px;';
 			$pop = $pop . 'background:'.$pop_bordercolor.';';
 			$pop = $pop . 'border-top-right-radius:10px;';
@@ -193,13 +94,13 @@ function AnythingPopup_shortcode( $atts )
 			$pop = $pop . '-webkit-border-top-left-radius:10px;';
 			$pop = $pop . '-khtml-border-top-left-radius: 10px;';   
 		$pop = $pop . '} ';
-		$pop = $pop . '#AnythingPopup_BoxContainerHeader a {';
+		$pop = $pop . '#AnythingPopup_BoxContainerHeader'.$pop_content_id.' a {';
 		   $pop = $pop . 'color:'.$pop_header_fontcolor.';';
 		   $pop = $pop . 'font-family:Verdana,Arial;';
 		   $pop = $pop . 'font-size:10pt;';
 		   $pop = $pop . 'font-weight:bold;';
 		$pop = $pop . '} ';
-		$pop = $pop . '#AnythingPopup_BoxTitle {';
+		$pop = $pop . '#AnythingPopup_BoxTitle'.$pop_content_id.' {';
 		   $pop = $pop . 'float:left;';
 		   $pop = $pop . ' margin:5px;';
 		   $pop = $pop . 'color:'.$pop_header_fontcolor.';';
@@ -207,15 +108,17 @@ function AnythingPopup_shortcode( $atts )
 		   $pop = $pop . 'font-size:12pt;';
 		   $pop = $pop . 'font-weight:bold;';   
 		$pop = $pop . '} ';
-		$pop = $pop . '#AnythingPopup_BoxClose {';
+		$pop = $pop . '#AnythingPopup_BoxClose'.$pop_content_id.' {';
 		   $pop = $pop . 'float:right;';
 		   $pop = $pop . 'width:50px;';
 		   $pop = $pop . 'margin:5px;';
 		$pop = $pop . '} ';
-		$pop = $pop . '#AnythingPopup_BoxContainerBody {';
+		$pop = $pop . '#AnythingPopup_BoxContainerBody'.$pop_content_id.' {';
 		   $pop = $pop . 'margin:15px;';
+		   $pop = $pop . 'overflow:auto;';
+		   $pop = $pop . 'height:'.$pop_content_height.'px;';
 		$pop = $pop . '} ';
-		$pop = $pop . '#AnythingPopup_BoxContainerFooter {';
+		$pop = $pop . '#AnythingPopup_BoxContainerFooter'.$pop_content_id.' {';
 		   $pop = $pop . 'position: fixed;'; 
 		   $pop = $pop . 'top:0;'; 
 		   $pop = $pop . 'left:0;'; 
@@ -226,23 +129,27 @@ function AnythingPopup_shortcode( $atts )
 		   $pop = $pop . '-moz-opacity: .3;';
 		   $pop = $pop . 'filter: alpha(opacity=30);';
 		   $pop = $pop . 'border:1px solid '.$pop_bordercolor.';';
-		   $pop = $pop . 'z-index:1;';
+		   $pop = $pop . 'z-index:999;';
 		   $pop = $pop . 'display:none;';
 		$pop = $pop . '} ';
 		$pop = $pop . '</style>';
 		
-		$HrefOpen = 'javascript:AnythingPopup_OpenForm("AnythingPopup_BoxContainer","AnythingPopup_BoxContainerBody","AnythingPopup_BoxContainerFooter","'.$pop_width.'","'.$pop_height.'");';
-		$HrefClose = "javascript:AnythingPopup_HideForm('AnythingPopup_BoxContainer','AnythingPopup_BoxContainerFooter');";
+		$HrefOpen = 'javascript:AnythingPopup_OpenForm("AnythingPopup_BoxContainer'.$pop_content_id.'","AnythingPopup_BoxContainerBody'.$pop_content_id.'","AnythingPopup_BoxContainerFooter'.$pop_content_id.'","'.$pop_width.'","'.$pop_height.'");';
+		$HrefClose = "javascript:AnythingPopup_HideForm('AnythingPopup_BoxContainer".$pop_content_id."','AnythingPopup_BoxContainerFooter".$pop_content_id."');";
 	
 		$pop = $pop . "<a href='".$HrefOpen."'>".$pop_caption."</a>";
-		$pop = $pop . '<div style="display: none;" id="AnythingPopup_BoxContainer">';
-		  $pop = $pop . '<div id="AnythingPopup_BoxContainerHeader">';
-			$pop = $pop . '<div id="AnythingPopup_BoxTitle">'.$pop_title.'</div>';
-			$pop = $pop . '<div id="AnythingPopup_BoxClose"><a href="'.$HrefClose.'">Close</a></div>';
+		$pop = $pop . '<div style="display: none;" id="AnythingPopup_BoxContainer'.$pop_content_id.'">';
+		  $pop = $pop . '<div id="AnythingPopup_BoxContainerHeader'.$pop_content_id.'">';
+			$pop = $pop . '<div id="AnythingPopup_BoxTitle'.$pop_content_id.'">'.$pop_title.'</div>';
+			$pop = $pop . '<div id="AnythingPopup_BoxClose'.$pop_content_id.'"><a href="'.$HrefClose.'">Close</a></div>';
 		  $pop = $pop . '</div>';
-		  $pop = $pop . '<div id="AnythingPopup_BoxContainerBody">'.$pop_content.'</div>';
+		  $pop = $pop . '<div id="AnythingPopup_BoxContainerBody'.$pop_content_id.'">'.$pop_content.'</div>';
 		$pop = $pop . '</div>';
-		$pop = $pop . '<div style="display: none;" id="AnythingPopup_BoxContainerFooter"></div>';
+		$pop = $pop . '<div style="display: none;" id="AnythingPopup_BoxContainerFooter'.$pop_content_id.'"></div>';
+	}
+	else
+	{
+		$pop = "No record found.";
 	}
 	return $pop;
 }
@@ -283,7 +190,7 @@ function AnythingPopup_widget($args)
 	extract($args);
 	echo $before_widget;
 	$pop_id = get_option('pop_id');
-	AnythingPopup($pop_id);
+	AnythingPopup($pop_id = $pop_id);
 	echo $after_widget;
 }
 	
@@ -343,11 +250,8 @@ function AnythingPopup_add_javascript_files()
 	}
 }   
 
-// Version 2.0 strat
-//add_action('init', 'AnythingPopup_add_javascript_files');
+add_shortcode( 'AnythingPopup', 'AnythingPopup_shortcode' );
 add_action('wp_enqueue_scripts', 'AnythingPopup_add_javascript_files');
-// Version 2.0 end
-
 add_action("plugins_loaded", "AnythingPopup_widget_init");
 register_activation_hook(__FILE__, 'AnythingPopup_install');
 register_deactivation_hook(__FILE__, 'AnythingPopup_deactivation');

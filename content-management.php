@@ -155,7 +155,7 @@
         <tbody>
           <tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
 		  	<td align="left" valign="middle"><?php echo(stripslashes($data->pop_id)); ?></td>
-            <td align="left" valign="middle">[ANYTHING-POPUP:<?php echo(stripslashes($data->pop_id)); ?>]</td>
+            <td align="left" valign="middle">[AnythingPopup id="<?php echo(stripslashes($data->pop_id)); ?>"]</td>
             <td align="left" valign="middle"><?php echo(stripslashes($data->pop_title)); ?></td>
             <td align="left" valign="middle"><a href="options-general.php?page=anything-popup/anything-popup.php&DID=<?php echo($data->pop_id); ?>">Edit</a> &nbsp; <a onClick="javascript:_pop_delete('<?php echo($data->pop_id); ?>')" href="javascript:void(0);">Delete</a></td>
           </tr>
