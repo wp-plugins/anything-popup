@@ -4,9 +4,9 @@ Donate link: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anyt
 Author URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Tags: popup, contact
-Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 4.1
+Requires at least: 3.2
+Tested up to: 3.6
+Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,11 @@ Slight change in the short code, Please find the new short code for your gallery
 Tested up to 3.5
 Option to add multiple pop up on single page.
 
+= 5.0 =
+Tested up to 3.6
+Added few security features.
+New admin layout.
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -95,3 +100,8 @@ Slight change in the short code, Please find the new short code for your gallery
 = 4.1 =
 Tested up to 3.5
 Option to add multiple pop up on single page.
+
+= 5.0 =
+Tested up to 3.6
+Added few security features.
+New admin layout.

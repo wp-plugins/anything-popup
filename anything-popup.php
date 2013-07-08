@@ -4,7 +4,7 @@
 Plugin Name: Anything Popup
 Description: This is a simple plugin to display the entered content in to unblockable popup window. popup will open by clicking the text or image button.
 Author: Gopi.R
-Version: 4.1
+Version: 5.0
 Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Author URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Donate link: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
@@ -14,6 +14,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("AnythingPopupTable", $wpdb->prefix . "AnythingPopup");
+define("AnythingPopup_UNIQUE_NAME", "anything-popup");
+define("AnythingPopup_TITLE", "Anything Popup");
+define('AnythingPopup_FAV', 'http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/');
+define('AnythingPopup_LINK', 'Check official website for more information <a target="_blank" href="'.AnythingPopup_FAV.'">click here</a>');
 
 function AnythingPopup( $pop_id = "1" )
 {
@@ -229,12 +233,28 @@ function AnythingPopup_deactivation()
 
 function AnythingPopup_admin()
 {
-	include_once("content-management.php");
+	global $wpdb;
+	$current_page = isset($_GET['ac']) ? $_GET['ac'] : '';
+	switch($current_page)
+	{
+		case 'edit':
+			include('pages/content-management-edit.php');
+			break;
+		case 'add':
+			include('pages/content-management-add.php');
+			break;
+		case 'set':
+			include('pages/widget-setting.php');
+			break;
+		default:
+			include('pages/content-management-show.php');
+			break;
+	}
 }
 
 function AnythingPopup_add_to_menu() 
 {
-	add_options_page('Anything Popup', 'Anything Popup', 'manage_options', __FILE__, 'AnythingPopup_admin' );
+	add_options_page('Anything Popup', 'Anything Popup', 'manage_options', 'anything-popup', 'AnythingPopup_admin' );
 }
 
 if (is_admin()) 

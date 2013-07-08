@@ -74,14 +74,14 @@ function _pop_delete(id)
 {
 	if(confirm("Do you want to delete this record?"))
 	{
-		document.pop_display.action="options-general.php?page=anything-popup/anything-popup.php&AC=DEL&DID="+id;
-		document.pop_display.submit();
+		document.frm_pop_display.action="options-general.php?page=anything-popup&ac=del&did="+id;
+		document.frm_pop_display.submit();
 	}
 }	
 
 function _pop_redirect()
 {
-	window.location = "options-general.php?page=anything-popup/anything-popup.php";
+	window.location = "options-general.php?page=anything-popup";
 }
 
 function _pop_help()
