@@ -3,7 +3,7 @@
 Plugin Name: Anything Popup
 Description: This is a simple plugin to display the entered content in to unblockable popup window. popup will open by clicking the text or image button.
 Author: Gopi Ramasamy
-Version: 5.2
+Version: 5.3
 Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Author URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Donate link: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
@@ -101,7 +101,7 @@ function AnythingPopup_shortcode( $atts )
 		$pop = $pop . '} ';
 		$pop = $pop . '#AnythingPopup_BoxContainerHeader'.$pop_content_id.' {';
 			$pop = $pop . 'height:30px;';
-			$pop = $pop . 'background:'.$pop_bordercolor.';';
+			$pop = $pop . 'background:'.$pop_headercolor.';';
 			$pop = $pop . 'border-top-right-radius:10px;';
 			$pop = $pop . '-moz-border-radius-topright:10px;';
 			$pop = $pop . '-webkit-border-top-right-radius:10px;';

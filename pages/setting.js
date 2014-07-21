@@ -67,7 +67,6 @@ function _pop_submit()
 		document.pop_form.pop_content.focus();
 		return false;
 	}
-
 }
 
 function _pop_delete(id)

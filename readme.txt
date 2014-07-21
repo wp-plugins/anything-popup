@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anyth
 Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Tags: popup, contact
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 5.2
+Tested up to: 3.9.1
+Stable tag: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,13 +24,13 @@ This is a simple plug-in to display the content in to unblockable popup window. 
 
 Popup windows are generally new web browser windows to display the content. but this is the CSS based modal popup window.
 
-Plugin advantage
+= Plugin advantage =
 
 * Easy to configuration.
 * Unblockable.
 * HTML Editor to add popup contact.
 
-Plugin configuration
+= Plugin configuration =
 
 * Drag and drop the widget
 * Paste the php code to your desired template location
@@ -42,11 +42,11 @@ Plugin configuration
 
 == Frequently Asked Questions ==
 
-= Q) How to change/update the style? = 
+1. How to change/update the style?
 
-= Q) How to add the image on the popup onclick link? = 
+2. How to add the image on the popup onclick link?
 
-= Q) How to add button on the popup onclick link? = 
+3. How to add button on the popup onclick link?
 
 [Answer](http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/ "Answer")
 
@@ -61,63 +61,87 @@ Plugin configuration
 == Changelog ==
 
 = 1.0 =
+
 First version
 
 = 2.0 =
+
 JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook).
 
 = 3.0 =
+
 New demo link
 
 = 4.0 =
+
 Tested up to 3.4.2
 Slight change in the short code, Please find the new short code for your gallery.
 
 = 4.1 =
+
 Tested up to 3.5
 Option to add multiple pop up on single page.
 
 = 5.0 =
+
 Tested up to 3.6
 Added few security features.
 New admin layout.
 
 = 5.1 =
+
 1. Tested up to 3.8
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (anything-popup.po) available in the languages folder.
 
 = 5.2 =
+
 1. Tested up to 3.9
+
+= 5.3 =
+
+1. JScolor picker added for color selection in admin content management page.
 
 == Upgrade Notice ==
 
 = 1.0 =
+
 First version
 
 = 2.0 =
+
 JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook).
 
 = 3.0 =
+
 New demo link
 
 = 4.0 =
+
 Tested up to 3.4.2
 Slight change in the short code, Please find the new short code for your gallery.
 
 = 4.1 =
+
 Tested up to 3.5
 Option to add multiple pop up on single page.
 
 = 5.0 =
+
 Tested up to 3.6
 Added few security features.
 New admin layout.
 
 = 5.1 =
+
 1. Tested up to 3.8
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (anything-popup.po) available in the languages folder.
 
 = 5.2 =
+
 1. Tested up to 3.9
+
+= 5.3 =
+
+1. JScolor picker added for color selection in admin content management page.

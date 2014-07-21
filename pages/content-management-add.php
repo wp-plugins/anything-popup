@@ -129,6 +129,7 @@ if ($pop_error_found == FALSE && strlen($pop_success) > 0)
 	}
 ?>
 <script language="JavaScript" src="<?php echo ANYTHGPOPUP_PLUGIN_URL; ?>/pages/setting.js"></script>
+<script language="JavaScript" src="<?php echo ANYTHGPOPUP_PLUGIN_URL; ?>/pages/color/jscolor.js"></script>
 <div class="form-wrap">
 	<div id="icon-edit" class="icon32 icon32-posts-post"><br></div>
 	<h2><?php _e('Anything Popup', 'anything-popup'); ?></h2>
@@ -144,23 +145,23 @@ if ($pop_error_found == FALSE && strlen($pop_success) > 0)
 		<p><?php _e('Enter your popup window height.', 'anything-popup'); ?> (Ex: 250)</p>
 		
 		<label for="tag-a"><?php _e('Header color', 'anything-popup'); ?></label>
-		<input name="pop_headercolor" type="text" id="pop_headercolor" value="" size="20" maxlength="7" />
-		<p><?php _e('Enter your popup window header bg color.', 'anything-popup'); ?> (Ex: #4D4D4D)</p>
+		<input class="color" type="text" name="pop_headercolor" id="pop_headercolor" value="#4D4D4D" maxlength="7" />
+		<p><?php _e('Select your popup window header bg color.', 'anything-popup'); ?> (Ex: #4D4D4D)</p>
 	  
 	  	<label for="tag-a"><?php _e('Border color', 'anything-popup'); ?></label>
-		<input name="pop_bordercolor" type="text" id="pop_bordercolor" value="" size="20" maxlength="7" />
-		<p><?php _e('Enter your popup window border color.', 'anything-popup'); ?> (Ex: #4D4D4D)</p>
+		<input class="color" type="text" name="pop_bordercolor" id="pop_bordercolor" value="#4D4D4D" maxlength="7" />
+		<p><?php _e('Select your popup window border color.', 'anything-popup'); ?> (Ex: #4D4D4D)</p>
 		
 		<label for="tag-a"><?php _e('Header font color', 'anything-popup'); ?></label>
-		<input name="pop_header_fontcolor" type="text" id="pop_header_fontcolor" value="" maxlength="7" />
-		<p><?php _e('Enter your popup window title font color.', 'anything-popup'); ?> (Ex: #FFFFFF)</p>
+		<input class="color" type="text" name="pop_header_fontcolor" id="pop_header_fontcolor" value="" maxlength="7" />
+		<p><?php _e('Select your popup window title font color.', 'anything-popup'); ?> (Ex: #FFFFFF)</p>
 		
 		<label for="tag-a"><?php _e('Popup title', 'anything-popup'); ?></label>
 		<input name="pop_title" type="text" id="pop_title" value="" size="50" maxlength="500" />
 		<p><?php _e('Enter your popup window title.', 'anything-popup'); ?></p>
 		
 		<label for="tag-a"><?php _e('Popup Link Text / Label / Image', 'anything-popup'); ?></label>
-		<input name="pop_caption" type="text" id="pop_caption" value="" size="150" maxlength="200" />
+		<input name="pop_caption" type="text" id="pop_caption" value="" size="100" maxlength="200" />
 		<p><?php _e('Enter your popup button.', 'anything-popup'); ?></p>
 		
 		<label for="tag-a"><?php _e('Popup content', 'anything-popup'); ?></label>

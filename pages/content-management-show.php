@@ -66,8 +66,8 @@ if (isset($_POST['frm_pop_display']) && $_POST['frm_pop_display'] == 'yes')
 			<th scope="col"><?php _e('Id', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Short code code', 'anything-popup'); ?></th>
             <th scope="col"><?php _e('Popup title', 'anything-popup'); ?></th>
-			<th scope="col"><?php _e('Window width', 'anything-popup'); ?></th>
-			<th scope="col"><?php _e('Window height', 'anything-popup'); ?></th>
+			<th scope="col"><?php _e('Width', 'anything-popup'); ?></th>
+			<th scope="col"><?php _e('Height', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Header color', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Border color', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Font color', 'anything-popup'); ?></th>
@@ -79,8 +79,8 @@ if (isset($_POST['frm_pop_display']) && $_POST['frm_pop_display'] == 'yes')
 			<th scope="col"><?php _e('Id', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Short code code', 'anything-popup'); ?></th>
             <th scope="col"><?php _e('Popup title', 'anything-popup'); ?></th>
-			<th scope="col"><?php _e('Window width', 'anything-popup'); ?></th>
-			<th scope="col"><?php _e('Window height', 'anything-popup'); ?></th>
+			<th scope="col"><?php _e('Width', 'anything-popup'); ?></th>
+			<th scope="col"><?php _e('Height', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Header color', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Border color', 'anything-popup'); ?></th>
 			<th scope="col"><?php _e('Font color', 'anything-popup'); ?></th>
