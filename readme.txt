@@ -6,7 +6,7 @@ Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anyth
 Tags: popup, contact
 Requires at least: 3.4
 Tested up to: 3.9.1
-Stable tag: 5.3
+Stable tag: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,10 @@ Plugin *.po file (anything-popup.po) available in the languages folder.
 
 1. JScolor picker added for color selection in admin content management page.
 
+= 5.4 =
+
+Support short code in the popup (i.e You can add other plugin short code inside this popup window)
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -145,3 +149,7 @@ Plugin *.po file (anything-popup.po) available in the languages folder.
 = 5.3 =
 
 1. JScolor picker added for color selection in admin content management page.
+
+= 5.4 =
+
+Support short code in the popup (i.e You can add other plugin short code inside this popup window)
