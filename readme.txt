@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anyth
 Plugin URI: http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/
 Tags: popup, contact
 Requires at least: 3.4
-Tested up to: 3.9.1
-Stable tag: 5.4
+Tested up to: 4.0
+Stable tag: 5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ Check official website for live demo [http://www.gopiplus.com/work/2012/05/25/wo
 * More Information : [More Information](http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/)				
 * Plugin URL : [Plugin URL](http://www.gopiplus.com/work/2012/05/25/wordpress-popup-plugin-anything-popup/)		
 
-This is a simple plug-in to display the content in to unblockable popup window. this popup window will open by clicking the button or link. we can place the button or link on the widget, post and pages. in the admin we have HTML editor to manage the popup content. also in the admin we have option to choose the width and height of the popup window.
+This is a simple plugin to display the content in to unblockable popup window. this popup window will open by clicking the button or link. we can place the button or link on the widget, post and pages. in the admin we have HTML editor to manage the popup content. also in the admin we have option to choose the width and height of the popup window.
 
 Popup windows are generally new web browser windows to display the content. but this is the CSS based modal popup window.
 
@@ -29,6 +29,7 @@ Popup windows are generally new web browser windows to display the content. but 
 * Easy to configuration.
 * Unblockable.
 * HTML Editor to add popup contact.
+* Plugin supports Chrome, Firefox, Safari and IE 7,8,9,10
 
 = Plugin configuration =
 
@@ -106,6 +107,11 @@ Plugin *.po file (anything-popup.po) available in the languages folder.
 
 Support short code in the popup (i.e You can add other plugin short code inside this popup window)
 
+= 5.5 =
+
+1. Tested up to 4.0
+2. Fixed IE popup position issue (Plugin supports Chrome, Firefox, Safari and IE 7,8,9,10)
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -153,3 +159,8 @@ Plugin *.po file (anything-popup.po) available in the languages folder.
 = 5.4 =
 
 Support short code in the popup (i.e You can add other plugin short code inside this popup window)
+
+= 5.5 =
+
+1. Tested up to 4.0
+2. Fixed IE popup position issue (Plugin supports Chrome, Firefox, Safari and IE 7,8,9,10)

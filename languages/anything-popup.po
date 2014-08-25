@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Anything Popup\n"
-"POT-Creation-Date: 2014-07-21 22:51+0800\n"
-"PO-Revision-Date: 2014-07-21 22:51+0800\n"
+"POT-Creation-Date: 2014-08-01 20:46+0800\n"
+"PO-Revision-Date: 2014-08-01 20:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,28 +13,28 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../anything-popup.php:169
+#: ../anything-popup.php:171
 msgid "No record found."
 msgstr ""
 
-#: ../anything-popup.php:223
+#: ../anything-popup.php:225
 msgid "Popup ID"
 msgstr ""
 
-#: ../anything-popup.php:229 ../pages/content-management-add.php:182
+#: ../anything-popup.php:231 ../pages/content-management-add.php:182
 #: ../pages/content-management-edit.php:204
 #: ../pages/content-management-show.php:141
 msgid "Check official website for more information"
 msgstr ""
 
-#: ../anything-popup.php:230 ../pages/content-management-add.php:183
+#: ../anything-popup.php:232 ../pages/content-management-add.php:183
 #: ../pages/content-management-edit.php:205
 #: ../pages/content-management-show.php:142
 msgid "click here"
 msgstr ""
 
-#: ../anything-popup.php:237 ../anything-popup.php:242
-#: ../anything-popup.php:274 ../pages/content-management-add.php:135
+#: ../anything-popup.php:239 ../anything-popup.php:244
+#: ../anything-popup.php:276 ../pages/content-management-add.php:135
 #: ../pages/content-management-edit.php:157
 #: ../pages/content-management-show.php:52
 msgid "Anything Popup"

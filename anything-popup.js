@@ -248,6 +248,8 @@ window.center = function()
 
    _x = ((this.size().width-hWnd.width)/2)+offsetX;
    _y = ((this.size().height-hWnd.height)/2)+offsetY;
+   _x = ((this.size().width-hWnd.width)/2);
+   _y = ((this.size().height-hWnd.height)/2);
 
    return{x:_x,y:_y};
 }
